@@ -1,0 +1,188 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  05. choose css start
+/*----------------------------------------*/
+.tr-choose {
+    &-icon {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        height: 70px;
+        transform: translateY(-50%);
+        line-height: 62px;
+        width: 70px;
+        text-align: center;
+        border-radius: 50%;
+        color: var(--tr-theme-1);
+        border: 1px solid var(--tr-theme-1);
+    }
+    &-list {
+        padding-left: 100px;
+        margin-right: 185px;
+        @media #{$lg,$md,$xs}{  
+            margin-right: 0;
+        }
+    }
+    &-list-box {
+        & ul {
+            & li {
+                list-style-type: none;
+                &:not(:last-child){
+                    margin-bottom: 23px;
+                    @media #{$lg}{  
+                       margin-bottom: 30px;              
+                    }
+                    @media #{$md,$xs}{  
+                       margin-bottom: 40px;              
+                    }
+                }
+            }
+        }
+    }
+    &-content {
+        & p {
+            @media #{$lg,$md,$xs}{  
+                font-size: 14px;
+            }
+        }
+    }
+    &-title {
+        @media #{$lg,$md,$xs}{  
+            font-size: 20px;
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: .08;
+            z-index: -1;
+        }
+        &-2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+        }
+        &-3 {
+            position: absolute;
+            top: 0;
+            right: 12%;
+            z-index: 2;
+            animation: translateX2 4s infinite alternate;
+        }
+    }
+    &-img{
+        &-shape{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            @media only screen and (max-width: 1850px){
+                display: none;
+            }
+            & img{
+                height: 100%;
+            }
+        }
+        &-mask{
+            position: relative;
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            z-index: 2;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            & img{
+                object-fit: cover;
+                width: 1050px;
+                height: 650px;
+                @media #{$xxxl}{
+                   width: 960px;
+                   height: 650px;
+                }
+                @media #{$xxl}{
+                   width: 880px;
+                }
+                @media #{$xl}{
+                   width: 750px;
+                }
+                @media #{$md,$xs}{
+                    height: 100%;
+                }
+            }
+            &-wrap{
+                position: absolute;
+                bottom: -5px;
+                right: 15px;
+                z-index: 1;
+                @media #{$xxxl}{
+                    bottom: -40px;
+                }
+                @media #{$xxl}{
+                    bottom: -95px;
+                }
+                @media #{$xl}{
+                    bottom: -85px;
+                }
+                @media #{$lg,$md,$xs}{
+                    position: static;
+                    margin-bottom: 60px;
+                }
+            }
+        }
+        &-contact {
+            position: absolute;
+            bottom: 8%;
+            right: 12%;
+            font-weight: 700;
+            font-size: 30px;
+            padding: 16px 120px;
+            z-index: 3;
+            color: #faf8f7;
+            @media #{$xxl}{
+                bottom: 21%;
+                padding: 16px 60px;
+            }
+            @media #{$xl}{
+                bottom: 30%;
+                font-size: 26px;
+                padding: 16px 35px;
+            }
+            &:hover {
+                color: var(--tr-common-white);
+            }
+            &::before{
+                position: absolute;
+                top: 0;
+                left: 0px;
+                content: '';
+                height: 100%;
+                width: 100%;
+                border-radius: 500px 0 500px 0;
+                background-color: var(--tr-common-black);
+                z-index: -1;
+            }
+            &::after{
+                position: absolute;
+                top: 0;
+                left: -70px;
+                content: '';
+                height: 100%;
+                width: calc(100% + 140px);
+                background-color:#fff;
+                z-index: -2;
+                border-radius: 500px 0 500px 0;
+            }
+            & svg,i {
+                display: inline-block;
+                margin-right: 20px;
+            }
+        }
+    }
+}

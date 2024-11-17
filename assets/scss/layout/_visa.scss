@@ -1,0 +1,193 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  02. visa css start
+/*----------------------------------------*/
+.tr-visa {
+    &-thumb {
+        clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+        overflow: hidden;
+        width: 100%;
+    }
+    &-content {
+        padding: 40px 38px;
+        padding-right: 30px;
+        border-radius: 10px 0 10px 10px;
+        margin-top: -155px;
+        margin-left: 40px;
+        background-color: #fff;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.08);
+        @media #{$lg,$xs}{  
+            padding: 40px 20px;
+            padding-right: 30px;
+            margin-left: 30px;            
+        }
+        @media #{$sm}{  
+            padding: 40px 38px;
+            padding-right: 30px;
+            margin-left: 60px;            
+        }
+        & p {
+            @media #{$lg,$md,$xs}{  
+                font-size: 14px;              
+            }
+        }
+    }
+    &-icon {
+        position: absolute;
+        top: -42px;
+        right: 30px;
+        display: inline-block;
+        height: 85px;
+        line-height: 80px;
+        width: 85px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #FAF8F7;
+        color: var(--tr-theme-1);
+        z-index: 1;
+        transition: all .3s;
+        @media #{$lg,$xs}{  
+            height: 65px;
+            line-height: 60px;
+            width: 65px;  
+        }
+        & svg {
+            @media #{$lg,$xs}{  
+                width: 30px;   
+            }
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: var(--tr-theme-1);
+            transition: all .3s;
+            transform: scale(0);
+            z-index: -1;
+        }
+    }
+    &-title {
+        @media #{$lg,$xs}{  
+            font-size: 22px;
+        }
+        & a {
+            transition:all .3s;
+            &:hover {
+                color: var(--tr-theme-1);
+            }
+        }
+    }
+    &-item {
+        &:hover {
+            & .tr-visa-icon {
+                color: #fff;
+                &::after{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+.tr-visa-details {
+    &-title {
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 15px;
+        @media #{$lg,$md,$xs}{
+            font-size: 25px;
+        }
+    }
+    &-wrap {
+        & p {
+            font-weight: 600;
+            line-height: 1.6;
+            font-family: var(--tr-ff-heading);
+            @media #{$lg,$md,$xs}{
+                font-size: 14px;
+            }
+        }
+        & .tr-custom-accordion {
+            margin-right: 0;
+        }
+    }
+    &-list {
+        &.style-2 {
+            margin-left: 80px;
+            @media #{$md,$xs}{
+                margin-left: 0;
+            }
+        }
+        & ul {
+            & li {
+                list-style-type: none;
+                padding-left: 30px;
+                font-size: 18px;
+                font-weight: 600;
+                position: relative;
+                font-family: var(--tr-ff-heading);
+                @media #{$lg,$md,$xs}{
+                   font-size: 14px;
+                }
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+                @media #{$md,$xs}{
+                    margin-top: 15px;
+                }
+                & i {
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                    font-size: 18px;
+                    color: var(--tr-theme-1);
+                }
+            }
+        }
+    }
+    &-contact-box {
+        padding: 45px 35px;
+        background-color: var(--tr-theme-1);
+        @media #{$lg,$xs}{
+            padding: 40px 20px;
+        }
+        & .tr-visa-details-title {
+            line-height: 1.4;
+            margin-bottom: 30px;
+            @media #{$lg,$md,$xs}{
+                font-size: 24px;
+            }
+        }
+        & span {
+            display: block;
+            margin-top: 32px;
+            margin-bottom: 4px;
+        }
+        & .tr-btn-radius {
+            color: var(--tr-common-white);
+            border: 1px solid #fff;
+            & i {
+                &::after{
+                    background-color: var(--tr-common-white);
+                }
+            }
+            &:hover {
+                & i {
+                    color: var(--tr-common-black);
+                }
+            }
+        }
+    }
+    &-sidebar {
+        @media #{$md,$xs}{
+            margin-top: 30px;
+        }
+    }
+}

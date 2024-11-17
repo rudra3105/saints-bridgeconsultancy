@@ -1,0 +1,19 @@
+@use '../utils' as *;
+
+/*---------------------------------------*/
+/*Background color
+/*-----------------------------------------*/
+
+
+.white-bg {
+	background: var(--tr-common-white);
+}
+.black-bg {
+	background: var(--tr-common-black);
+}
+.theme-bg {
+	background: var(--tr-theme-1);
+}
+.gray-bg {
+	background: var(--tr-gray-1);
+}

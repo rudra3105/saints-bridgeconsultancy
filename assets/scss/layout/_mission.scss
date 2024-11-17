@@ -1,0 +1,179 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  15. mission css start
+/*----------------------------------------*/
+.tr-mission {
+    &-item {
+        padding: 10px;
+        padding-bottom: 30px;
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.08);
+        background: #fff;
+        &:hover {
+            & .tr-mission-flag {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    &-flag {
+        position: absolute;
+        top: -55px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        border-radius: 50%;
+        transition: all 500ms ease;
+    }
+    &-thumb {
+        & img {
+            width: 100%;
+        }
+    }
+    &-arrow-box  {
+        position: relative;
+        z-index: 2;
+        @media #{$md,$xs}{  
+            margin-top: 30px;
+        }
+        & .mission-next {
+            margin-left: 5px;
+        }
+        & button {
+            transition: .3s;
+            width: 50px;
+            height: 50px;
+            line-height: 48px;
+            text-align: center;
+            background-color: var(--tr-common-white);
+            color: var(--tr-theme-1);
+            padding: 0;
+            &:hover {
+                color: var(--tr-common-white);
+                background-color: var(--tr-theme-1);
+            }
+        }
+    }
+    &-bg {
+        position: relative;
+        z-index: 1;
+        &::after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 58.2%;
+            width: 100%;
+            background-color: var(--tr-common-black);
+            z-index: -2;
+        }
+    }
+    &-content {
+        & p {
+            padding: 0 10px;
+            @media #{$sm}{                
+                padding: 0 40px;
+            }
+        }
+    }
+    &-active {
+        margin: -40px -20px;
+        padding: 40px 20px;
+    }
+    &-shape{
+        &-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @media #{$md,$xs}{
+                display: none;
+            }
+            & img {
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+        &-2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @media #{$md,$xs}{
+                display: none;
+            }
+            & img {
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+        &-3 {
+            position: absolute;
+            top: 0;
+            right: 13%;
+            @media #{$md,$xs}{
+                display: none;
+            }
+            & img {
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+        &-4 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            & img {
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+        &-5 {
+            position: absolute;
+            right: 0;
+            top: 33%;
+
+            & img {
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+    }
+    &-style-2 {
+        & .tr-mission-item {
+            padding: 0px 13px;
+            padding-bottom: 20px;
+            @media #{$xl,$lg}{  
+                padding: 0px 15px;   
+                padding-bottom: 15px;      
+            }
+            @media #{$xs}{  
+                padding: 0px 30px;   
+                padding-bottom: 20px;      
+            }
+            @media #{$sm}{  
+                padding: 0px 15px;   
+                padding-bottom: 20px;      
+            }
+            
+            & p {
+                @media #{$xl}{  
+                    font-size: 14px;        
+                }
+                @media #{$lg,$md}{  
+                    font-size: 14px;
+                    padding: 0;        
+                }
+            }
+        }
+        & .tr-mission-flag {
+            border: 7px solid #f9f9f9;
+        }
+        & .tr-mission-content {
+           & p {
+                @media #{$sm}{                
+                    padding: 0px;
+                }
+           }
+        }
+    }
+}

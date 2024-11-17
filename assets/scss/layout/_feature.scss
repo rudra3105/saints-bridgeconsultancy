@@ -1,0 +1,65 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  09. feature css start
+/*----------------------------------------*/
+.tr-feature {
+    &-icon {
+        display: inline-block;
+        & svg,i {
+            transition: all .3s;
+            color: var(--tr-common-black);
+        }
+    }
+    &-title {
+        font-weight: 700;
+        font-size: 24px;
+        @media #{$lg,$md,$xs}{  
+            font-size: 20px;              
+        }
+        & a {
+            transition: all .3s;
+            &:hover {
+                color: var(--tr-theme-1);
+            }
+        }
+    }
+    &-shape {
+        position: absolute;
+        top: -20px;
+        right: 3px;
+        transition: all .4s;
+        opacity: 0;
+        visibility: hidden;
+        @media #{$lg}{ 
+            right: -2%;
+            transform: scale(.6);             
+        }
+    }
+    &-item {
+        padding: 40px;
+        border: 1px solid #d8dde1;
+        transition: all .3s;
+        @media #{$lg}{                
+            padding: 25px;
+        }
+        &:hover {
+            border: 1px solid var(--tr-theme-1);
+            & .tr-feature-icon {
+                & i,svg {
+                    color: var(--tr-theme-1)
+                }
+            }
+            & .tr-feature-shape {
+                top: -3%;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        & p {
+            @media #{$lg,$md,$xs}{  
+                font-size: 14px;              
+            }
+        }
+    }
+}

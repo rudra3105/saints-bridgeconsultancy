@@ -1,0 +1,89 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  07. cta css start
+/*----------------------------------------*/
+
+.tr-cta {
+    &-ptb {
+        padding: 47.5px 0;
+    }
+    &-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: -1;
+        & img {
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.22;
+        }  
+    }
+    &-box {
+        margin-left: -15px;
+        @media #{$md,$xs}{
+            margin-left: 0;
+        }
+        & .tr-section-title {
+            @media #{$xl}{        
+                font-size: 33px;        
+              
+            }
+            @media #{$md}{        
+                font-size: 30px;        
+                & br {
+                    display: block;
+                }
+            }
+            @media #{$xs}{                
+                margin-bottom: 25px;
+            }
+        }
+    }
+    &-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: -1;
+        @media #{$xl}{                
+            width: 30%;
+        }
+        & img {
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }      
+    }
+    &-style-2 {
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 122px 0;
+        @media #{$xs}{  
+            padding: 75px 0;           
+        }
+        & .tr-btn-sm {
+            &:hover {
+                color: var(--tr-theme-1);
+                background-color: var(--tr-common-white);
+            }
+        }
+        & .tr-section-title {
+            @media #{$lg,$md}{
+                font-size: 38px;
+            }            
+            @media #{$xs}{
+                font-size: 30px;
+                margin-bottom: 0;
+                & br {
+                    display: none;
+                }
+            }
+            @media #{$sm}{
+                font-size: 34px;
+            }
+        }
+
+    }
+}

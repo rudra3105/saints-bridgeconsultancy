@@ -1,0 +1,108 @@
+@use '../utils' as *;
+
+.tr-btn{
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px 35px;
+    transition: all .3s;
+    display: inline-block;
+    color: var(--tr-common-white);
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--tr-theme-1);
+    @media #{$md,$xs}{
+        font-size: 14px;
+        padding: 17px 30px;
+    }
+    & i,svg {
+        display: inline-block;
+        margin-left: 8px;
+        transform: translateY(-1px);
+    }
+    &.white-btn {
+        color: var(--tr-theme-1);
+        background-color: var(--tr-common-white);     
+    }
+    &:hover{
+        color: var(--tr-common-white);
+        background-color: var(--tr-common-black);
+    }
+    &-sm {
+        padding: 18px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        display: inline-block;
+        color: var(--tr-common-white);
+        text-transform: uppercase;
+        text-align: center;
+        transition: all .3s;
+        background-color: var(--tr-theme-1);
+        @media #{$md,$xs}{
+            font-size: 14px;
+            padding: 17px 20px;
+        }
+        & i,svg {
+            margin-left: 4px;
+        }
+        &:hover{
+            color: var(--tr-common-white);
+            background-color: var(--tr-common-black);
+        }
+        &.hover-2 {
+            &:hover{
+                color: var(--tr-common-black);
+                background-color: var(--tr-common-white);
+            }
+        }
+    }
+    &-radius {
+        font-weight: 700;
+        font-size: 14px;
+        display: inline-block;
+        padding: 7px 20px;
+        border-radius: 30px;
+        text-transform: capitalize;
+        border: 1px solid #D8DDE1;
+        color: var(--tr-common-black);
+        position: relative;
+        transition: all .3s;
+        & i {
+            display: inline-block;
+            position: absolute;
+            content: '';
+            top: 50%;
+            right: -26px;
+            transform: translateY(-50%);
+            height: 34px;
+            line-height: 33px;
+            width: 34px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--tr-common-white);
+            background-color: var(--tr-common-black);
+            z-index: 1;
+            &::after{
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                background-color: var(--tr-theme-1);
+                transition: all .3s;
+                transform: scale(0);
+                z-index: -1;
+            }
+        }
+        &:hover {
+            border: 1px solid var(--tr-theme-1);
+            color: var(--tr-common-black);
+            & i {
+                &::after{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

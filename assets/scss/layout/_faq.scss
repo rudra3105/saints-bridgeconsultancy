@@ -1,0 +1,36 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  08. faq css start
+/*----------------------------------------*/
+.tr-faq {
+    &-thumb {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 46.85%;
+        @media #{$md,$xs}{  
+            position: static; 
+            width: 100%;       
+        }
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-wrap {
+        padding-top: 75px;
+        padding-bottom: 40px;
+    }
+    &-shape-1 {
+        position: absolute;
+        top: 2%;
+        right: 0;
+        z-index: -1;
+        @media #{$xxl,$xl}{  
+            right: -10%;        
+        }
+    }
+}

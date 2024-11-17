@@ -1,0 +1,47 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  21. text-slider css start
+/*----------------------------------------*/
+
+.tr-text{
+    &-slider{
+        &-ptb {
+            padding: 22px 0;
+            background-color: var(--tr-theme-1);
+            @media #{$xl,$lg,$md,$xs}{  
+                padding: 15px 0;    
+            }
+        }
+        &-item {
+            display: flex;
+            align-items: center;
+            & span {
+                font-weight: 700;
+                font-size: 30px;
+                text-transform: uppercase;
+                display: inline-block;
+                color: var(--tr-common-white);
+                font-family: var(--tr-ff-heading);
+                @media #{$xl,$lg,$md,$xs}{  
+                    font-size: 22px;     
+                }
+            }
+            & img {
+                display: inline-block;
+                margin-left: 35px;
+                margin-right: 25px;
+            }
+        }
+    
+    }
+    &-active{
+        & .slider-transtion {
+            -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+        & .swiper-slide{
+            width: auto;
+        }
+    }
+}

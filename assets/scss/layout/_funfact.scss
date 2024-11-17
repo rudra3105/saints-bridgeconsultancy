@@ -1,0 +1,117 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  11. funfact css start
+/*----------------------------------------*/
+.tr-funfact {
+    &-icon {
+        color: var(--tr-theme-1);
+        display: inline-block;
+        margin-right: 35px;
+        @media #{$lg}{                
+            margin-right: 15px;
+        }
+    }
+    &-box {
+        padding: 40px 40px;
+        padding-right: 45px;
+        background: #fff;
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.08);
+        @media #{$xl,$lg}{                
+            padding: 27px 15px;
+            padding-right: 15px;
+            padding-right: 45px;
+        }
+        @media #{$xs}{                
+            margin-right: 0;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+    &-number {
+        & h4 {
+            font-weight: 700;
+            font-size: 48px;
+            margin-bottom: 5px;
+            color: var(--tr-common-black);
+            @media #{$lg,$md,$xs}{  
+                font-size: 35px;     
+            }
+            & i {
+                font-style: normal;
+            }
+        }
+        & span {
+            font-weight: 600;
+            font-size: 20px;
+            @media #{$lg}{                
+                font-size: 15px;
+            }
+        }
+    }
+    &-style-2 {
+        @media #{$xs}{  
+           padding-bottom: 40px;
+        }
+        & .tr-funfact-section-title {
+            @media #{$md,$xs}{  
+                margin-bottom: 80px;      
+            }
+            & p {
+                @media #{$lg,$md,$xs}{  
+                    & br {
+                        display: none;
+                    }   
+                }  
+            }
+        }
+        & .tr-funfact-box {
+            padding: 20px 15px;
+            padding-top: 102px;
+            background-color: #FAF8F7;
+            box-shadow: none;
+            @media #{$xl,$lg,$md}{  
+                padding-top: 85px;   
+            }
+            @media #{$xs}{  
+                padding-top: 85px; 
+                margin-bottom: 80px;  
+            }
+            &:hover {
+                & .tr-funfact-icon {
+                    color: #fff;
+                    background-color: var(--tr-theme-1);
+                }
+            }
+        }
+        & .tr-funfact-number {
+            & h4 {
+                @media #{$xl,$lg,$md,$xs}{  
+                    font-size: 30px;     
+                }
+            }
+            & span {
+                font-size: 16px;
+                @media #{$xl,$lg,$md,$xs}{  
+                    font-size: 14px;     
+                }
+            }
+        }
+        & .tr-funfact-icon {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            width: 100px;
+            line-height: 83px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 0;
+            margin: 0 auto;
+            transition: .3s;
+            background-color: #FAF8F7;
+            border: 8px solid #fff;
+        }
+    }
+}

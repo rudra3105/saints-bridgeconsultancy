@@ -1,0 +1,165 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  18. service css start
+/*----------------------------------------*/
+.tr-service {
+    &-thumb {
+        flex: 0 0 auto;
+        height: 100%;
+        @media #{$md,$xs}{  
+            width: 100%;         
+        }
+        & img {
+            height: 100%;
+            object-fit: cover;
+            @media #{$md,$xs}{  
+                width: 100%;   
+            }
+        }
+    }
+    &-content {
+        padding: 30px 28px;
+    }
+    &-icon {
+        display: block;
+        margin-bottom: 145px;
+        @media #{$xxxl}{  
+            margin-bottom: 70px;           
+        }
+        @media #{$xl}{  
+            margin-bottom: 95px;           
+        }
+        @media #{$lg,$md,$xs}{
+            margin-bottom: 30px;
+        }
+        & svg,i {
+            transition: .3s;
+            color: var(--tr-common-black);
+        }
+    }
+    &-number {
+        font-weight: 700;
+        font-size: 24px;
+        display: block;
+        margin-bottom: 18px;
+        color: var(--tr-common-black);
+        font-family: var(--tr-ff-heading);
+    }
+    &-item {
+        background: #faf8f7;
+        @media #{$lg,$md,$xs}{
+            flex-wrap: wrap;
+        }
+        &:hover {
+            & .tr-service-icon {
+                & i,svg {
+                    color: var(--tr-theme-1);
+                }
+            }
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            & img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.tr-service-dots {
+    position: relative;
+    z-index: 2;
+    &::after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        right: 42.5%;
+        width: 77px;
+        height: 2px;
+        background-image: linear-gradient(to right,rgb(226, 9, 53) , rgba(124, 5, 29, 0));
+        @media #{$xxxl,$xxl}{  
+            right: 40.5%;            
+        }
+        @media #{$xl}{  
+            right: 37.5%;            
+        }
+        @media #{$lg}{  
+            right: 34.5%;            
+        }
+        @media #{$md}{  
+            right: 30.5%;            
+        }
+        @media #{$xs}{  
+            right: 10.5%;            
+        }
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        left: 42.5%;
+        width: 77px;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(124, 5, 29, 0), rgb(226, 9, 53) );
+        @media #{$xxxl,$xxl}{  
+            left: 40.5%;            
+        }
+        @media #{$xl}{  
+            left: 37.5%;            
+        }
+        @media #{$lg}{  
+            left: 34.5%;            
+        }
+        @media #{$md}{  
+            left: 30.5%;            
+        }
+        @media #{$xs}{  
+            left: 10.5%;            
+        }
+    }
+    & .swiper-pagination-bullet {
+        width: 13px;
+        height: 13px;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: var(--tr-theme-1);
+        opacity: 1;
+        margin: 0 10px;
+        transition: .3s;
+        position: relative;
+        &::after{
+            content: "";
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            border: .5px solid var(--tr-theme-1);
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(2.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+    }
+    & .swiper-pagination-bullet-active {
+        background-color: var(--tr-theme-1);
+        &.swiper-pagination-bullet{
+            &::after{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+    }
+}

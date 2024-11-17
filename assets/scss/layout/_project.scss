@@ -1,0 +1,110 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  17. project css start
+/*----------------------------------------*/
+
+.tr-project {
+    &-content {
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+        right: 25px;
+        background: #fff;
+        padding: 16px 20px;
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.08);
+        @media #{$sm}{
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+        }
+        & span {
+            display: block;
+            margin-bottom: 5px;
+            @media #{$sm}{
+                font-size: 12px;
+            }
+        }
+    }
+    &-title {
+        font-size: 22px;
+        margin-bottom: 0;
+        @media #{$lg,$md,$xs}{  
+            font-size: 19px;          
+        }
+        @media #{$sm}{
+            font-size: 16px;
+        }
+    }
+    &-arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        padding: 3px 8px;
+        color: var(--tr-common-white);
+        background-color: var(--tr-theme-1);
+        transition: .3s;
+        & svg,i {
+            display: inline-block;
+            transform: translateY(-2px);
+        }
+        &:hover {
+            color: var(--tr-common-white);
+            background-color: var(--tr-common-black);
+        }
+    }
+    &-active {
+        margin-right: -330px;
+        @media #{$lg,$md,$xs}{  
+            margin-right: 0;           
+        }
+    }
+    &-bg {
+        &::after{
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 26%;
+            background-color: var(--tr-theme-1);
+            z-index: -2;
+            @media #{$xxl,$xl}{  
+                width: 35%;            
+            }
+            @media #{$lg}{  
+                width: 42%;            
+            }
+            @media #{$md}{  
+                width: 40%;            
+            }
+            @media #{$xs}{  
+                display: none;           
+            }
+            
+        }
+    }
+    &-arrow-box {
+        & .project-next {
+            margin-left: 5px;
+        }
+        & button {
+            @media #{$md,$xs}{
+                color: var(--tr-common-white);
+                background-color: var(--tr-theme-1);
+            }  
+            &:hover {
+                background-color: var(--tr-common-black);
+            }
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+    }
+}
