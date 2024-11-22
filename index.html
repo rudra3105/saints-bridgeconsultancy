@@ -183,11 +183,46 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-4 col-md-6">
-                        <div class="tr-header-top-right d-flex justify-content-sm-center justify-content-center align-items-center" style="background-color: #ffcc00; padding: 5px 0; width: 100%;">
-                            <span style="font-size: 14px; font-weight: bold; color: #000;">
-                                ₹0 Processing Fees & ₹0 Consultancy Charges
-                            </span>
+                        <div id="fixed-top-banner">
+                            ₹0 Processing Fees & ₹0 Consultancy Charges
                         </div>
+                        
+                        <style>
+                            /* Fixed Banner Styling */
+                            #fixed-top-banner {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                background-color: #ffcc00;
+                                color: #000;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                padding: 10px 0;
+                                z-index: 9999;
+                                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                                display: block;
+                            }
+                        
+                            /* Responsive Design for Mobile View */
+                            @media only screen and (max-width: 600px) {
+                                #fixed-top-banner {
+                                    font-size: 12px;  /* Smaller text size */
+                                    padding: 8px 0;   /* Adjusted padding for mobile view */
+                                    width: 100%;      /* Ensures the width spans full screen */
+                                    box-sizing: border-box; /* Avoids any overflow issues */
+                                }
+                            }
+                        
+                            /* Additional padding for body so it doesn't overlap with the banner */
+                            body {
+                                padding-top: 40px;  /* Make sure the content doesn't get hidden behind the fixed banner */
+                            }
+                        </style>
+                        
+                        
+                        
                         
                     </div>
                 </div>
@@ -271,6 +306,40 @@
         <!-- header-area-end -->
 
     </header>
+
+    <!-- This will be placed between the logo and hero section -->
+<div id="mobile-banner">
+    ₹0 Processing Fees & ₹0 Consultancy Charges
+</div>
+
+<style>
+/* General Styles */
+#mobile-banner {
+    display: none; /* Hide the banner by default */
+    text-align: center;
+    background-color: #ffcc00; /* You can change the background color */
+    color: #000; /* Text color */
+    font-size: 14px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 10px 0; /* Padding for spacing */
+    margin-bottom: 20px; /* Space below the banner */
+}
+
+/* Mobile View: Show the banner between the logo and hero section */
+@media only screen and (max-width: 768px) {
+    #mobile-banner {
+        display: block;  /* Show the banner on mobile screens */
+    }
+}
+
+/* Additional Styling for Body to prevent overlap on mobile */
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: 50px; /* Adjust for mobile padding */
+    }
+}
+</style>
+
 
     <main>
 
